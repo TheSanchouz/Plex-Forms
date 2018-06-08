@@ -216,60 +216,7 @@ TPlex::~TPlex()
 
 void TPlex::deleteLine(int x, int y)
 {
-	TBase *cur = start;
-	TStack<TLine *> lines(100);
-	lines.push(nullptr);
-	TLine* res = nullptr;
-
-	while (cur != nullptr && res == nullptr)
-	{
-		if (cur->getType() == POINT)
-		{
-			cur = lines.pop();
-			if (cur != nullptr)
-			{
-				((TLine *)cur)->updateMultiplicity();
-			}
-		}
-		else
-		{
-			switch (cur->getMultiplicity())
-			{
-			case 1:
-				lines.push((TLine *)cur);
-				cur = ((TLine *)cur)->getLeft();
-				break;
-			case 2:
-				lines.push((TLine *)cur);
-				cur = ((TLine *)cur)->getRight();
-				break;
-			case 3:
-				((TLine *)cur)->updateMultiplicity();
-
-				if (((TLine *)cur)->distance(x, y) == 1)
-				{
-					res = (TLine *)cur;
-					res->changeVisibility();
-
-					while (lines.peek() != nullptr)
-					{
-						cur = lines.pop();
-						while (cur->getMultiplicity() != 1)
-						{
-							((TLine *)cur)->updateMultiplicity();
-						}
-					}
-				}
-
-				cur = lines.pop();
-				if (cur != nullptr)
-				{
-					((TLine *)cur)->updateMultiplicity();
-				}
-				break;
-			}
-		}
-	}
+	
 }
 
 TLine* TPlex::findLineWithPoint(std::string name)

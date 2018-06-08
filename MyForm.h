@@ -48,8 +48,6 @@ namespace PlexForms
 	private: System::Windows::Forms::ToolStripMenuItem^  показать»мена“очекToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  перекраситьѕлексToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  удалитьЋиниюToolStripMenuItem;
-
-
 	private: System::ComponentModel::IContainer^  components;
 
 
