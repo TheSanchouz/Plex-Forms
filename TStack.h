@@ -32,7 +32,7 @@ public:
 		delete[] arr;
 	}
 
-	TStack<T>& operator= (const TStack<T>& src)
+	TStack<T>& operator=(const TStack<T>& src)
 	{
 		if (size != src.size)
 		{
@@ -84,4 +84,3 @@ public:
 		}
 	}
 };
-

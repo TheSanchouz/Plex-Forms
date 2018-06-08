@@ -1,12 +1,12 @@
 #include "TLine.h"
 
-TLine::TLine(TPoint * left, TPoint * right) : TBase(LINE, left->getName() + " " + right->getName(), 7)
+TLine::TLine(TPoint *left, TPoint *right) : TBase(LINE, left->getName() + " " + right->getName(), 7)
 {
 	this->left = left;
 	this->right = right;
 }
 
-TLine::TLine(const TLine & src) : TBase(LINE, src.left->getName() + " " + src.right->getName(), 7)
+TLine::TLine(const TLine &src) : TBase(LINE, src.left->getName() + " " + src.right->getName(), 7)
 {
 	this->left = src.left;
 	this->right = src.right;
@@ -20,7 +20,7 @@ TLine::TLine(const TLine & src) : TBase(LINE, src.left->getName() + " " + src.ri
 	this->multiplicity = src.multiplicity;
 }
 
-TLine & TLine::operator=(const TLine & src)
+TLine& TLine::operator=(const TLine &src)
 {
 	this->left = src.left;
 	this->right = src.right;
@@ -40,9 +40,6 @@ TLine::~TLine()
 {
 	delete left;
 	delete right;
-
-	//left = nullptr;
-	//right = nullptr;
 }
 
 void TLine::reserve()
@@ -57,7 +54,7 @@ void TLine::reserve()
 	name = name + " " + part;
 }
 
-void TLine::show(System::Drawing::Graphics ^ g)
+void TLine::show(System::Drawing::Graphics ^g)
 {
 	if (isVisible == 1)
 	{
@@ -127,12 +124,12 @@ int TLine::distance(int x, int y)
 		return 0;
 }
 
-void TLine::setLeft(TBase * newLeft)
+void TLine::setLeft(TBase *newLeft)
 {
 	left = newLeft;
 }
 
-void TLine::setRight(TBase * newRight)
+void TLine::setRight(TBase *newRight)
 {
 	right = newRight;
 }

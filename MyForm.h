@@ -244,7 +244,7 @@ namespace PlexForms
 	private: System::Void ñîõğàíèòüĞèñóíîêToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		SaveFileDialog ^saveFileDialog = gcnew SaveFileDialog();
-		saveFileDialog->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+		saveFileDialog->Filter = "plex files (*.plex)|*.plex|All files (*.*)|*.*";
 		saveFileDialog->FilterIndex = 1;
 		saveFileDialog->RestoreDirectory = true;
 
@@ -266,7 +266,7 @@ namespace PlexForms
 			MessageBoxIcon::Warning) == System::Windows::Forms::DialogResult::Yes)
 		{
 			OpenFileDialog ^openFileDialog = gcnew OpenFileDialog();
-			openFileDialog->Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+			openFileDialog->Filter = "plex files (*.plex)|*.plex|All files (*.*)|*.*";
 			openFileDialog->FilterIndex = 1;
 			openFileDialog->RestoreDirectory = true;
 
@@ -397,6 +397,7 @@ namespace PlexForms
 		}
 
 	}
+
 	private: System::Void ïåğåêğàñèòüÏëåêñToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		ColorDialog ^colorDialog = gcnew ColorDialog;
@@ -409,6 +410,7 @@ namespace PlexForms
 			drawing->draw(g);
 		}
 	}
+
 	private: System::Void ïåğåìåñòèòüÒî÷êóToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)
 	{
 		readyMovePoint = true;
@@ -418,6 +420,7 @@ namespace PlexForms
 
 		readyToDeleteLine = false;
 	}
+
 	private: System::Void óäàëèòüËèíèşToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e)	
 	{
 		readyToDeleteLine = true;

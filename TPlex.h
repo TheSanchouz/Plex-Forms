@@ -1,7 +1,6 @@
 #pragma once
 #include "TPoint.h"
 #include "TLine.h"
-#include "TBase.h"
 
 class TPlex
 {

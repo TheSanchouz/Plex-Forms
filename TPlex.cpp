@@ -7,13 +7,11 @@ void TPlex::attachToLeft(TLine *left, TLine *l)
 {
 	if (left->getLeft()->getName() == l->getLeft()->getName())
 	{
-		//delete l->getLeft();
 		l->setLeft(left->getLeft());
 		left->setLeft(l);
 	}
 	else
 	{
-		//delete l->getLeft(); 
 		l->setLeft(left->getRight());
 		left->setRight(l);
 	}
@@ -276,15 +274,6 @@ TLine* TPlex::findLineWithPoint(std::string name)
 		}
 	}
 
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
-		}
-	}
-
 	return res;
 }
 
@@ -342,15 +331,6 @@ TLine* TPlex::findLineWithPoint(int x, int y)
 				}
 				break;
 			}
-		}
-	}
-
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
 		}
 	}
 
@@ -413,15 +393,6 @@ TPoint* TPlex::findPoint(std::string name)
 		}
 	}
 
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
-		}
-	}
-
 	return res;
 }
 
@@ -479,15 +450,6 @@ TPoint* TPlex::findPoint(int x, int y)
 				}
 				break;
 			}
-		}
-	}
-
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
 		}
 	}
 
@@ -610,15 +572,6 @@ void TPlex::movePoint(int x, int y, int dx, int dy)
 			}
 		}
 	}
-
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
-		}
-	}
 }
 
 void TPlex::draw(System::Drawing::Graphics^ g)
@@ -673,15 +626,6 @@ void TPlex::draw(System::Drawing::Graphics^ g)
 				}
 				break;
 			}
-		}
-	}
-
-	while (lines.peek() != nullptr)
-	{
-		cur = lines.pop();
-		while (cur->getMultiplicity() != 1)
-		{
-			((TLine *)cur)->updateMultiplicity();
 		}
 	}
 }

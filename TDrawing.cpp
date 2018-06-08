@@ -1,6 +1,4 @@
 #include "TDrawing.h"
-#include "TLine.h"
-#include <string>  
 
 std::string TDrawing::getNextName()
 {
