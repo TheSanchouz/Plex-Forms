@@ -801,11 +801,6 @@ void TPlex::open(std::string path)
 		{
 			getline(infile, item);
 
-			if (item.find("|") == std::string::npos) 
-			{ 
-				break; 
-			}
-
 			if (item.find("POINT") == 0)
 			{
 				TPoint*point = new TPoint(item);
